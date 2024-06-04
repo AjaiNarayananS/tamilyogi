@@ -1,4 +1,4 @@
-const url = 'https://tamilyogi.beer';
+const url = 'https://tamilyogi.win';
 const puppeteer = require('puppeteer');
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -112,6 +112,7 @@ async function moviedetail(media, link) {
             // Fetch TMDB data
             const tmdbMovie = await fetchTmdbData(media, title);
 
+
             if (tmdbMovie) {
                 const orignaltitle = tmdbMovie.title||tmdbMovie.name;
                 const poster = `https://image.tmdb.org/t/p/w500${tmdbMovie.poster_path}`;
@@ -120,6 +121,7 @@ async function moviedetail(media, link) {
                 const rating = tmdbMovie.vote_average;
 
                 titles.push({
+
                     title,
                     orignaltitle,
                     poster,
@@ -131,6 +133,7 @@ async function moviedetail(media, link) {
                 });
             } else {
                 titles.push({
+        
                     title,
                     orignaltitle: null,
                     poster: null,
